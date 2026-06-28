@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Elite dark luxury palette */
+  --bg: #05070F;
+  --bg-elevated: #0F172A;
+  --border: #1E2937;
+  --text: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --accent: #0EA5E9;
+  --premium: #C5A46E;
+  --success: #10B981;
+}
+
+@theme inline {
+  --color-background: #05070F;
+  --color-foreground: #F1F5F9;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Force elite dark theme */
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* Typography */
+.heading {
+  font-family: var(--font-geist-sans);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Elite components */
+.nav {
+  background: rgba(5, 7, 15, 0.96);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+
+.lux-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.lux-card:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.premium-tier-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px 4px 10px;
+  background: linear-gradient(145deg, #1E2937, #0F172A);
+  border: 1px solid var(--premium);
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--premium);
+  box-shadow: 0 0 0 1px rgba(197, 164, 110, 0.1);
+  transition: all 0.2s ease;
+}
+
+.premium-tier-logo:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  box-shadow: 0 0 0 1px rgba(197, 164, 110, 0.2);
+}
+
+.premium-tier-logo svg {
+  width: 14px;
+  height: 14px;
+}
+
+.section-header {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: var(--premium);
+}
+
+.knowledge-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.metric-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.stunning-pill {
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+
+.stunning-pill.active {
+  background: var(--accent);
+  color: #05070F;
+  border-color: var(--accent);
+}
+
+.elite-modal {
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.unified-container {
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom form inputs */
+input, textarea, select {
+  background: #05070F;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #334155;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+/* Modal animation */
+.modal {
+  animation: modalEnter 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes modalEnter {
+  from { opacity: 0; transform: translateY(20px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .section-header {
+    font-size: 13px;
+  }
+}
+
+/* Product page specific */
+.product-hero {
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 45%);
+}
